@@ -62,6 +62,8 @@ public class App{
 
         } catch (IOException e) {
 
+            System.out.println(e.getMessage());
+
         }
     }
 
@@ -83,11 +85,11 @@ public class App{
                 temp[a] = grades[a];
 
             }
-            System.out.println("top five grades: "+Arrays.toString(topFiveGrades));
-            System.out.println(Arrays.toString(temp));
+            /*System.out.println("top five grades: "+Arrays.toString(topFiveGrades));
+            System.out.println(Arrays.toString(temp));*/
         }
         Arrays.sort(temp);
-        System.out.println(Arrays.toString(temp));
+        /*System.out.println(Arrays.toString(temp));*/
 
         topFiveGrades[topFiveGrades.length-1]=temp[temp.length-1];
         topFiveGrades[topFiveGrades.length-2]=temp[temp.length-2];
@@ -105,7 +107,8 @@ public class App{
 
           sum = sum+selectedGrades[i];
         }
-       double average = sum/selectedGrades
+       double average = (double) sum/selectedGrades.length;
+
         return average;
     }
 
