@@ -20,12 +20,12 @@ public class App{
 
     public static void Codes(String file) {
 
-
+        System.out.println("Reading mixture of words, and numbers from text file");
 
 
 
         try {
-            File inputFile = new File(file);
+            File inputFile = new File("JC_Results.txt");
             Scanner input = new Scanner(inputFile);
 
             input.useDelimiter("[,\r\n]+");
@@ -48,12 +48,9 @@ public class App{
                 }
 
                 System.out.println("Student No: "+studentNumber+" Code: "+ Arrays.toString(subjectCode)+" Grades: "+Arrays.toString(Results));
-
                 int[] TopFive = selectFiveGrades(subjectCode, Results);
 
-                double average = calculateAverage(TopFive);
-
-                System.out.println("Average: "+average);
+                double average = calculateAverage(top );
 
             }
 
@@ -62,8 +59,6 @@ public class App{
 
 
         } catch (IOException e) {
-
-            System.out.println(e.getMessage());
 
         }
     }
@@ -86,31 +81,23 @@ public class App{
                 temp[a] = grades[a];
 
             }
-            /*System.out.println("top five grades: "+Arrays.toString(topFiveGrades));
-            System.out.println(Arrays.toString(temp));*/
+            System.out.println("top five grades: "+Arrays.toString(topFiveGrades));
+            System.out.println(Arrays.toString(temp));
         }
         Arrays.sort(temp);
-        /*System.out.println(Arrays.toString(temp));*/
+        System.out.println(Arrays.toString(temp));
 
         topFiveGrades[topFiveGrades.length-1]=temp[temp.length-1];
         topFiveGrades[topFiveGrades.length-2]=temp[temp.length-2];
 
-        System.out.println("Top five grades: "+Arrays.toString(topFiveGrades));
+        System.out.println("top five grades: "+Arrays.toString(topFiveGrades));
           return topFiveGrades;
 
     }
 
     public static double calculateAverage( int[] selectedGrades) {
-
-        int sum = 0;
-
-        for(int i = 0; i< selectedGrades.length;i++){
-
-          sum = sum+selectedGrades[i];
-        }
-       double average = (double) sum/selectedGrades.length;
-
-        return average;
+        double average = (double) selectedGrades/selectedGrades.length;
+       return average;
     }
 
 /*
