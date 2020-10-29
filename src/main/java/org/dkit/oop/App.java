@@ -50,7 +50,9 @@ public class App{
                 System.out.println("Student No: "+studentNumber+" Code: "+ Arrays.toString(subjectCode)+" Grades: "+Arrays.toString(Results));
                 int[] TopFive = selectFiveGrades(subjectCode, Results);
 
-                double average = calculateAverage(top );
+                double average = calculateAverage(TopFive);
+
+                System.out.println(average);
 
             }
 
@@ -96,8 +98,15 @@ public class App{
     }
 
     public static double calculateAverage( int[] selectedGrades) {
-        double average = (double) selectedGrades/selectedGrades.length;
-       return average;
+
+        int sum = 0;
+
+        for(int i = 0; i< selectedGrades.length;i++){
+
+          sum = sum+selectedGrades[i];
+        }
+       double average = sum/selectedGrades
+        return average;
     }
 
 /*
