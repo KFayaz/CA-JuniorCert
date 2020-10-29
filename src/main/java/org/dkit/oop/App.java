@@ -20,12 +20,12 @@ public class App{
 
     public static void Codes(String file) {
 
-        System.out.println("Reading mixture of words, and numbers from text file");
+
 
 
 
         try {
-            File inputFile = new File("JC_Results.txt");
+            File inputFile = new File(file);
             Scanner input = new Scanner(inputFile);
 
             input.useDelimiter("[,\r\n]+");
@@ -48,11 +48,12 @@ public class App{
                 }
 
                 System.out.println("Student No: "+studentNumber+" Code: "+ Arrays.toString(subjectCode)+" Grades: "+Arrays.toString(Results));
+
                 int[] TopFive = selectFiveGrades(subjectCode, Results);
 
                 double average = calculateAverage(TopFive);
 
-                System.out.println(average);
+                System.out.println("Average: "+average);
 
             }
 
@@ -94,8 +95,8 @@ public class App{
         topFiveGrades[topFiveGrades.length-1]=temp[temp.length-1];
         topFiveGrades[topFiveGrades.length-2]=temp[temp.length-2];
 
-        System.out.println("top five grades: "+Arrays.toString(topFiveGrades));
-          return topFiveGrades;
+        System.out.println("Top five grades: "+Arrays.toString(topFiveGrades));
+        return topFiveGrades;
 
     }
 
@@ -105,11 +106,108 @@ public class App{
 
         for(int i = 0; i< selectedGrades.length;i++){
 
-          sum = sum+selectedGrades[i];
+            sum = sum+selectedGrades[i];
         }
-       double average = (double) sum/selectedGrades.length;
+        double average = (double) sum/selectedGrades.length;
 
         return average;
     }
 
+/*
+{
+    public static void main(String[] args) {
+        readFile("JC_Results.txt");
+        fileToArray("JC_Results.txt");
+        displayWords(fileToArray("JC_Results.txt"));
 
+       // System.out.println(Arrays.toString(fileToArray));
+    }
+
+    public static void readFile( String file ) {
+
+        System.out.println("Reading the file: ");
+
+
+            try {
+                //Scanner scan = new Scanner(new File(file)); testing
+                Scanner s;
+                s = new Scanner(new File("JC_Results.txt"));
+
+                while (s.hasNext()){
+
+                    String str = s.nextLine();
+                    //System.out.println(str);
+                }
+                s.close();
+            }
+
+            catch (FileNotFoundException e) {
+                */
+    /*e.printStackTrace();*//*
+  //just testing
+            }
+
+
+    }
+
+
+
+
+        }
+
+
+        //System.out.print(list);
+
+
+
+            list.add(s.next());
+
+            */
+    /*System.out.println(list);*//*
+
+
+        }
+        for(int i=1;i < 17;i++ ){
+
+
+    }
+        if(list)
+        //System.out.print(list);
+
+        return(list);
+    }
+
+    public static void displayWords(ArrayList<String> list)
+    {
+        for (int i = 0; i < list.size(); i++)
+        {
+            System.out.println(list.get(i));
+        }
+    }
+*/
+
+   /* Scanner s = new Scanner(new File("filepath"));
+    ArrayList<String> list = new ArrayList<String>();
+while (s.hasNext()){
+    list.add(s.next());
+}
+s.close();*/
+
+
+
+
+
+
+  /*  public int[] selectFiveGrades(int[] codes, int[] grades) {
+        int[] selectedGrades;
+        return selectedGrades[];
+    }
+
+    public double calculateAverage( int[] selectedGrades) {
+
+        double avg = 0;
+
+
+        return avg;
+    }*/
+}
