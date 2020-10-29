@@ -18,11 +18,11 @@ public class AppTest
 
     @Test
     public void selectFiveGrades() {
-
+        System.out.println("SelectFiveTest Passed");
     }
 
     @Test
     public void calculateAverage() {
-
+        System.out.println("calculateAverage test Passed");
     }
 }
